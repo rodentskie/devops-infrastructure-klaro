@@ -48,3 +48,6 @@ Thumbs.db
 # terragrunt
 .terragrunt-cache
 .terraform.lock.hcl
+
+# propagate script output
+scripts/propagate/record
