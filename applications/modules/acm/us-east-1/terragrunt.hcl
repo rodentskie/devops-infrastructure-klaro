@@ -29,6 +29,7 @@ locals {
 }
 
 inputs = {
+  region = local.region
   certificates = {
     klaro = {
       domain_name               = "klaro.rodentskie.com"
