@@ -1,6 +1,7 @@
 locals {
   region_vars = read_terragrunt_config(find_in_parent_folders("region.hcl"))
   tags_vars   = read_terragrunt_config(find_in_parent_folders("tags.hcl"))
+  tags        = local.tags_vars.locals[local.environment]
 
   environment = get_env("TG_VAR_ENVIRONMENT")
 }
@@ -22,5 +23,5 @@ remote_state {
 
 inputs = merge(
   local.region_vars.locals[local.environment],
-  { environment = local.environment },
+  local.tags,
 )
