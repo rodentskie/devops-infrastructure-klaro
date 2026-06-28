@@ -1,0 +1,32 @@
+terraform {
+  source = "git::https://github.com/rodentskiedev/terraform-modules.git//resources/lb/target_group?ref=v0.0.12"
+}
+
+include "root" {
+  path = find_in_parent_folders("root.hcl")
+}
+
+locals {
+  environment = get_env("TG_VAR_ENVIRONMENT")
+  tags_vars   = read_terragrunt_config(find_in_parent_folders("tags.hcl"))
+  tags        = local.tags_vars.locals[local.environment]
+}
+
+dependency "vpc" {
+  config_path = find_in_parent_folders("modules/vpc/vpc")
+
+  mock_outputs_allowed_terraform_commands = ["validate", "init", "plan"]
+  mock_outputs = {
+    main = {
+      id         = "vpc-123456789"
+      cidr_block = "10.0.0.0/16"
+    }
+  }
+}
+
+inputs = {
+  vpc_id      = dependency.vpc.outputs.vpcs["main"].id,
+  config_file = "${get_terragrunt_dir()}/config/config.yml"
+
+  tags = local.tags
+}
