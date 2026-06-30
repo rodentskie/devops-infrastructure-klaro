@@ -11,3 +11,15 @@ target_groups:
       timeout: 5
       interval: 30
       matcher: "200"
+  app:
+    port: 3000
+    protocol: HTTP
+    target_type: ip
+    health_check:
+      path: /favicon.ico
+      port: traffic-port
+      healthy_threshold: 3
+      unhealthy_threshold: 3
+      timeout: 5
+      interval: 30
+      matcher: "200"
