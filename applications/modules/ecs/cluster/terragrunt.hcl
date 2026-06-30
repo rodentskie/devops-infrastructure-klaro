@@ -1,5 +1,5 @@
 terraform {
-  source = "git::https://github.com/rodentskiedev/terraform-modules.git//resources/ecr?ref=v0.0.13"
+  source = "git::https://github.com/rodentskiedev/terraform-modules.git//resources/ecs/cluster?ref=v0.0.13"
 }
 
 include "root" {
@@ -13,7 +13,12 @@ locals {
 }
 
 inputs = {
-  config_file = "${get_terragrunt_dir()}/config/config.yml"
+  clusters = {
+    main = {
+      container_insights = "enabled"
+    }
+  }
 
   tags = local.tags
+
 }
