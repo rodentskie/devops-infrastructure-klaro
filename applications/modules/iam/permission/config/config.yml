@@ -1,0 +1,4 @@
+policies:
+  ecs_task_execution:
+    description: "Grants ECS task execution permissions: ECR image pull and Secrets Manager access."
+    policy_file: ecs_task_execution.json
