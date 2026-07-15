@@ -4,7 +4,7 @@ target_groups:
     protocol: HTTP
     target_type: ip
     health_check:
-      path: /favicon.ico
+      path: /ping
       port: traffic-port
       healthy_threshold: 3
       unhealthy_threshold: 3

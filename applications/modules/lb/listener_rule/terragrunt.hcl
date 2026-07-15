@@ -62,7 +62,7 @@ inputs = {
         },
         {
           type   = "host-header"
-          values = ["klaro.rodentskie.com"]
+          values = ["htc.klaro.rodentskie.com"]
         }
       ]
     }
@@ -76,7 +76,7 @@ inputs = {
       conditions = [
         {
           type   = "host-header"
-          values = ["klaro.rodentskie.com"]
+          values = ["htc.klaro.rodentskie.com"]
         }
       ]
     }
