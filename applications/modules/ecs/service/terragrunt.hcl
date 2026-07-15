@@ -35,7 +35,7 @@ dependency "task_def" {
   mock_outputs_allowed_terraform_commands = ["validate", "init", "plan"]
   mock_outputs = {
     task_definitions = {
-      app = {
+      api = {
         arn      = "arn:aws:ecs:123456789"
         family   = "app"
         revision = "1"
@@ -106,7 +106,7 @@ inputs = {
   services = {
     api = {
       cluster_arn         = dependency.cluster.outputs.clusters["main"].arn
-      task_definition_arn = dependency.task_def.outputs.task_definitions["app"].arn
+      task_definition_arn = dependency.task_def.outputs.task_definitions["api"].arn
       desired_count       = 1
       subnet_ids          = values(dependency.subnet.outputs.private_subnets)[*].id
       security_group_ids  = [dependency.sg.outputs.security_groups["app"].id]

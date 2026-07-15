@@ -1,5 +1,5 @@
 task_definitions:
-  app:
+  api:
     cpu: 256
     memory: 512
     network_mode: awsvpc
