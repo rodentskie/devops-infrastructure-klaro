@@ -17,12 +17,32 @@ dependency "subnets" {
 
   mock_outputs_allowed_terraform_commands = ["validate", "init", "plan"]
   mock_outputs = {
-    public_subnets = {
-      ap-southeast-1a = {
+    private_subnets = {
+      "${local.region}a" = {
         availability_zone = "ap-southeast-1a"
-        cidr_block        = "10.0.10.0/24"
-        id                = "subnet-1234"
-        vpc_id            = "vpc-1234"
+        cidr_block        = "10.0.1.0/24"
+        id                = "subnet-123456789"
+        vpc_id            = "vpc-123456789"
+      }
+      "${local.region}b" = {
+        availability_zone = "ap-southeast-1a"
+        cidr_block        = "10.0.1.0/24"
+        id                = "subnet-123456789"
+        vpc_id            = "vpc-123456789"
+      }
+    }
+    public_subnets = {
+      "${local.region}a" = {
+        availability_zone = "ap-southeast-1a"
+        cidr_block        = "10.0.1.0/24"
+        id                = "subnet-123456789"
+        vpc_id            = "vpc-123456789"
+      }
+      "${local.region}b" = {
+        availability_zone = "ap-southeast-1a"
+        cidr_block        = "10.0.1.0/24"
+        id                = "subnet-123456789"
+        vpc_id            = "vpc-123456789"
       }
     }
   }

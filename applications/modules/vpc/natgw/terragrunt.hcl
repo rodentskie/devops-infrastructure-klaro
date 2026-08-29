@@ -20,10 +20,12 @@ dependency "eip" {
 
   mock_outputs_allowed_terraform_commands = ["validate", "init", "plan"]
   mock_outputs = {
-    nat = {
-      allocation_id = "eipalloc-123456789"
-      id            = "eipalloc-987654321"
-      public_ip     = "13.228.171.174"
+    eips = {
+      nat = {
+        allocation_id = "eipalloc-123456789"
+        id            = "eipalloc-987654321"
+        public_ip     = "13.228.171.174"
+      }
     }
   }
 }
@@ -33,17 +35,33 @@ dependency "subnet" {
 
   mock_outputs_allowed_terraform_commands = ["validate", "init", "plan"]
   mock_outputs = {
-    "${local.region}a" = {
-      availability_zone = "ap-southeast-1a"
-      cidr_block        = "10.0.1.0/24"
-      id                = "subnet-123456789"
-      vpc_id            = "vpc-123456789"
+    private_subnets = {
+      "${local.region}a" = {
+        availability_zone = "ap-southeast-1a"
+        cidr_block        = "10.0.1.0/24"
+        id                = "subnet-123456789"
+        vpc_id            = "vpc-123456789"
+      }
+      "${local.region}b" = {
+        availability_zone = "ap-southeast-1a"
+        cidr_block        = "10.0.1.0/24"
+        id                = "subnet-123456789"
+        vpc_id            = "vpc-123456789"
+      }
     }
-    "${local.region}b" = {
-      availability_zone = "ap-southeast-1a"
-      cidr_block        = "10.0.1.0/24"
-      id                = "subnet-123456789"
-      vpc_id            = "vpc-123456789"
+    public_subnets = {
+      "${local.region}a" = {
+        availability_zone = "ap-southeast-1a"
+        cidr_block        = "10.0.1.0/24"
+        id                = "subnet-123456789"
+        vpc_id            = "vpc-123456789"
+      }
+      "${local.region}b" = {
+        availability_zone = "ap-southeast-1a"
+        cidr_block        = "10.0.1.0/24"
+        id                = "subnet-123456789"
+        vpc_id            = "vpc-123456789"
+      }
     }
   }
 }
