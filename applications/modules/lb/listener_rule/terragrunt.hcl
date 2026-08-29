@@ -19,11 +19,11 @@ dependency "tg" {
   mock_outputs = {
     target_groups = {
       api = {
-        arn  = "arn:aws:elasticloadbalancing:123456789"
+        arn  = "arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/73e2d6bc24d8a067"
         name = "my-tg"
       }
       app = {
-        arn  = "arn:aws:elasticloadbalancing:123456789"
+        arn  = "arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/73e2d6bc24d8a067"
         name = "my-tg"
       }
     }
