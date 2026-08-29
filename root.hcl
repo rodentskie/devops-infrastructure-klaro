@@ -10,10 +10,10 @@ remote_state {
   backend = "s3"
   config = {
     encrypt        = true
-    bucket         = "tg-state-${local.environment}-${local.tags_vars.locals[local.environment].project}-${local.region_vars.locals[local.environment].aws_region}"
+    bucket         = "tg-states-${local.environment}-${local.tags_vars.locals[local.environment].project}-${local.region_vars.locals[local.environment].aws_region}"
     key            = "${path_relative_to_include()}/tf.tfstate"
     region         = local.region_vars.locals[local.environment].aws_region
-    dynamodb_table = "tg-locks-${local.environment}-${local.tags_vars.locals[local.environment].project}-${local.region_vars.locals[local.environment].aws_region}"
+    dynamodb_table = "tg-lock-${local.environment}-${local.tags_vars.locals[local.environment].project}-${local.region_vars.locals[local.environment].aws_region}"
   }
   generate = {
     path      = "backend.tf"
