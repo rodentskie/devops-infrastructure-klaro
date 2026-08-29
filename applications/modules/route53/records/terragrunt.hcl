@@ -38,9 +38,9 @@ dependency "hosted_zone" {
 
 inputs = {
   records = {
-    api-a = {
+    api = {
       zone_id = dependency.hosted_zone.outputs.hosted_zones["default"].id
-      name    = "htc.klaro.rodentskie.com"
+      name    = "api.koronadal.rodentskie.com"
       type    = "CNAME"
       ttl     = 300
       values  = [dependency.alb.outputs.load_balancers.public.dns_name]

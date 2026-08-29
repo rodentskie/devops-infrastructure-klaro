@@ -39,7 +39,7 @@ dependency "sg" {
         name = "sg-name"
         arn  = "arn:aws:ec2:112233"
       },
-      app = {
+      api = {
         id   = "sg-123456789"
         name = "sg-name"
         arn  = "arn:aws:ec2:112233"

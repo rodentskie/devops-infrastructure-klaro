@@ -29,9 +29,9 @@ locals {
 
 inputs = {
   certificates = {
-    klaro = {
-      domain_name               = "klaro.rodentskie.com"
-      subject_alternative_names = ["*.klaro.rodentskie.com"]
+    koronadal = {
+      domain_name               = "koronadal.rodentskie.com"
+      subject_alternative_names = ["*.koronadal.rodentskie.com"]
       validation_method         = "DNS"
       tags                      = local.tags
     }

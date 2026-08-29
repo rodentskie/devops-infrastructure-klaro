@@ -75,7 +75,7 @@ dependency "sg" {
         name = "sg-name"
         arn  = "arn:aws:ec2:112233"
       },
-      app = {
+      api = {
         id   = "sg-123456789"
         name = "sg-name"
         arn  = "arn:aws:ec2:112233"
@@ -109,11 +109,11 @@ inputs = {
       task_definition_arn = dependency.task_def.outputs.task_definitions["api"].arn
       desired_count       = 1
       subnet_ids          = values(dependency.subnet.outputs.private_subnets)[*].id
-      security_group_ids  = [dependency.sg.outputs.security_groups["app"].id]
+      security_group_ids  = [dependency.sg.outputs.security_groups["api"].id]
 
       load_balancer = {
         target_group_arn = dependency.tg.outputs.target_groups["api"].arn
-        container_name   = "app"
+        container_name   = "api"
         container_port   = 3000
       }
     }

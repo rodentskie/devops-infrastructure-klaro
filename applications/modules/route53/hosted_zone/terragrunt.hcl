@@ -15,7 +15,7 @@ locals {
 inputs = {
   hosted_zones = {
     default = {
-      name    = "klaro.rodentskie.com"
+      name    = "koronadal.rodentskie.com"
       comment = "default hosted zone"
       tags    = local.tags
     }

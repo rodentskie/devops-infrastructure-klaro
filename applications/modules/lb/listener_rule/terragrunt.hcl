@@ -57,26 +57,8 @@ inputs = {
       }
       conditions = [
         {
-          type   = "path-pattern"
-          values = ["/api/*"]
-        },
-        {
           type   = "host-header"
-          values = ["htc.klaro.rodentskie.com"]
-        }
-      ]
-    }
-    app = {
-      listener_arn = dependency.listener.outputs.listeners["https"].arn
-      priority     = 200
-      action = {
-        type             = "forward"
-        target_group_arn = dependency.tg.outputs.target_groups["app"].arn
-      }
-      conditions = [
-        {
-          type   = "host-header"
-          values = ["htc.klaro.rodentskie.com"]
+          values = ["api.koronadal.rodentskie.com"]
         }
       ]
     }

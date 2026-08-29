@@ -20,7 +20,7 @@ security_groups:
         protocol: "-1"
         cidr_ipv4: "0.0.0.0/0"
 
-  app:
+  api:
     description: "App security group"
     ingress:
       from_alb:

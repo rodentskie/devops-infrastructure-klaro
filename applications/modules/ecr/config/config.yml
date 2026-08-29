@@ -1,5 +1,5 @@
 repositories:
-  app:
+  api:
     image_tag_mutability: IMMUTABLE
     force_delete: false
     scan_on_push: true
