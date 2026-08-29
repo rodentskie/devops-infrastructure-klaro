@@ -37,10 +37,10 @@ dependency "listener" {
   mock_outputs = {
     listeners = {
       http = {
-        arn = "arn:aws:elasticloadbalancing:123456789"
+        arn = "arn:aws:elasticloadbalancing:us-east-1:123456789012:listener/app/my-load-balancer/50dc6c495c0c9188/f2f7dc8efc522ab2"
       }
       https = {
-        arn = "arn:aws:elasticloadbalancing:123456789"
+        arn = "arn:aws:elasticloadbalancing:us-east-1:123456789012:listener/app/my-load-balancer/50dc6c495c0c9188/f2f7dc8efc522ab2"
       }
     }
   }
