@@ -19,7 +19,7 @@ dependency "acm" {
   mock_outputs = {
     certificates = {
       klaro = {
-        arn         = "arn:aws:acm:123456789"
+        arn         = "arn:aws:acm:us-east-1:123456789012:certificate/a1b2c3d4-5678-90ab-cdef-111111111111"
         domain_name = "test.com"
       }
     }
