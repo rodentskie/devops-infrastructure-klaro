@@ -1,0 +1,14 @@
+buckets:
+  env-files:
+    versioning: false
+    lifecycle_rules:
+      - id: transition-and-expire
+        prefix: ""
+        transitions:
+          - days: 30
+            storage_class: STANDARD_IA
+          - days: 90
+            storage_class: GLACIER
+        expiration_days: 365
+        noncurrent_version_expiration_days: 30
+    policy: enforce_ssl.json
