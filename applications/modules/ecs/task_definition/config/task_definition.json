@@ -1,6 +1,6 @@
 [
   {
-    "name": "app",
+    "name": "api",
     "image": "httpd:latest",
     "essential": true,
     "portMappings": [
