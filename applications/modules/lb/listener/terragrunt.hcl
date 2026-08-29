@@ -33,7 +33,7 @@ dependency "alb" {
   mock_outputs = {
     load_balancers = {
       public = {
-        arn      = "arn:aws:elasticloadbalancing:123456789"
+        arn      = "arn:aws:elasticloadbalancing:us-east-1:123456789012:loadbalancer/app/my-load-balancer/50dc6c495c0c9188"
         dns_name = "elb.amazonaws.com"
       }
     }

@@ -35,10 +35,12 @@ dependency "natgw" {
 
   mock_outputs_allowed_terraform_commands = ["validate", "init", "plan"]
   mock_outputs = {
-    main = {
-      subnet_id = "subnet-123456789"
-      id        = "nat-987654321"
-      public_ip = "13.228.171.174"
+    nat_gateways = {
+      main = {
+        subnet_id = "subnet-123456789"
+        id        = "nat-987654321"
+        public_ip = "13.228.171.174"
+      }
     }
   }
 }
@@ -48,10 +50,13 @@ dependency "igw" {
 
   mock_outputs_allowed_terraform_commands = ["validate", "init", "plan"]
   mock_outputs = {
-    main = {
-      id     = "igw-987654321"
-      vpc_id = "vpc-123456789"
+    internet_gateways = {
+      main = {
+        id     = "igw-987654321"
+        vpc_id = "vpc-123456789"
+      }
     }
+
   }
 }
 
