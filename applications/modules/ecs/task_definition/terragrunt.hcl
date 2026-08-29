@@ -19,7 +19,7 @@ dependency "iam" {
   mock_outputs = {
     roles = {
       ecs_task = {
-        arn  = "arn:aws:role:123456789"
+        arn  = "arn:aws:iam::123456789012:role/tmp"
         id   = "tmp-id"
         name = "tmp-name"
       }
