@@ -18,7 +18,7 @@ dependency "acm" {
   mock_outputs_allowed_terraform_commands = ["validate", "init", "plan"]
   mock_outputs = {
     certificates = {
-      klaro = {
+      koronadal = {
         arn         = "arn:aws:acm:us-east-1:123456789012:certificate/a1b2c3d4-5678-90ab-cdef-111111111111"
         domain_name = "test.com"
       }

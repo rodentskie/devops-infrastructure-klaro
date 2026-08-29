@@ -27,7 +27,7 @@ dependency "acm_ap_southeast_1" {
   mock_outputs_allowed_terraform_commands = ["validate", "init", "plan"]
   mock_outputs = {
     certificates = {
-      api = {
+      koronadal = {
         arn                       = "arn:aws:acm:::certificate/mock"
         domain_name               = "domain.com"
         subject_alternative_names = []
