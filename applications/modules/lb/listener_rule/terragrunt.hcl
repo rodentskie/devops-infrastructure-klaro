@@ -58,7 +58,7 @@ inputs = {
       conditions = [
         {
           type   = "host-header"
-          values = ["api.koronadal.rodentskie.com"]
+          values = ["api.rodentskie.com"]
         }
       ]
     }

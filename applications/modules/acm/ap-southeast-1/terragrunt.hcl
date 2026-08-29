@@ -30,8 +30,8 @@ locals {
 inputs = {
   certificates = {
     koronadal = {
-      domain_name               = "koronadal.rodentskie.com"
-      subject_alternative_names = ["*.koronadal.rodentskie.com"]
+      domain_name               = "rodentskie.com"
+      subject_alternative_names = ["*.rodentskie.com"]
       validation_method         = "DNS"
       tags                      = local.tags
     }
