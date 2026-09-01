@@ -27,7 +27,7 @@ jobs:
       
       - name: Run apply
         run: |
-          terragrunt run --all apply --non-interactive
+          terragrunt run --all destroy --non-interactive
         env:
           TG_VAR_ENVIRONMENT: develop
 
